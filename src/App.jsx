@@ -1,24 +1,25 @@
 import React from 'react';
 import './App.scss';
-import { Switch, Link, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+import { StartPage } from './StartPage';
+import { Game } from './Game';
+import { GameOver } from './GameOver';
 
 export const App = () => (
-  <div>
-    React starter pack
-    <div>
-      <nav className="nav">
-        <Link to="/">Home</Link>
-        <Link to="/users">Users</Link>
-      </nav>
+  <Switch>
+    <Route path="/" exact>
+      <StartPage />
+    </Route>
 
-      <Switch>
-        <Route path="/users">
-          <div>Users page</div>
-        </Route>
-        <Route path="/">
-          <div>Home page</div>
-        </Route>
-      </Switch>
-    </div>
-  </div>
+    <Route
+      path="/game"
+      exact
+    >
+      <Game />
+    </Route>
+
+    <Route path="/gameover">
+      <GameOver />
+    </Route>
+  </Switch>
 );
