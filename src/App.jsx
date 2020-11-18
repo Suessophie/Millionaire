@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './App.scss';
 import { Switch, Route } from 'react-router-dom';
-import { StartPage } from './StartPage';
-import { Game } from './Game';
-import { GameOver } from './GameOver';
+import { StartPage } from './components/StartPage/StartPage';
+import { Game } from './components/Game/Game';
+import { GameOver } from './components/GameOver/GameOver';
 
 export const App = () => {
   const [benefit, setBenefit] = useState(0);
@@ -19,8 +19,7 @@ export const App = () => {
       </Route>
 
       <Route
-        path="/game"
-        exact
+        path="/game/:questionId"
       >
         <Game
           totalBenefit={totalBenefit}

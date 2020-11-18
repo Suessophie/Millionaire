@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 
+import './Benefit.scss';
+
 export const Benefit = ({
   benefit,
   achieved,

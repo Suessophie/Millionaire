@@ -1,0 +1,31 @@
+.game {
+  display: flex;
+  height: 100vh;
+
+  &__leftBlock {
+    width: calc(100% - 376px);
+    background-color: #EFEFEF;
+  }
+
+  &__title {
+    font-size: 32px;
+    line-height: 37px;
+    width: 624px;
+    height: 74px;
+    padding: 133px 0 calc(100vh - 455px) 80px;
+  }
+
+  &__options {
+    width: 810px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 calc(50% - 405px);
+  }
+
+  &__rightBlock {
+    width: 376px;
+    background-color: #FFF;
+    padding: calc(50vh - 282px) 0;
+  }
+}

@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import image from './images/Group_265.png';
+
+import startingImage from '../../images/Group_265.png';
+import './StartPage.scss';
 
 export const StartPage = () => (
   <div className="start">
     <div className="start__container">
       <img
-        src={image}
+        src={startingImage}
         alt="sign class in stars"
       />
       <div className="start__content">
@@ -15,7 +17,7 @@ export const StartPage = () => (
         </div>
         <Link
           className="start__link"
-          to="/game"
+          to="/game/1"
         >
           Start
         </Link>

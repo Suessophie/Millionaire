@@ -1,0 +1,50 @@
+.benefit {
+  font-weight: 400;
+  background-image: url('../../images/Rectangle_mini.png');
+  background-repeat: no-repeat;
+  width: 240px;
+  height: 40px;
+  margin: 0 auto 8px auto;
+  text-align: center;
+  line-height: 40px;
+  position: relative;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    width: 69px;
+    height: 1px;
+    background-color: #D0D0D8;
+    position: absolute;
+    top: 19.5px;
+    left: -68px;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 69px;
+    height: 1px;
+    background-color: #D0D0D8;
+    position: absolute;
+    top: 19.5px;
+    right: -68px;
+  }
+
+  &--achieved {
+    color: #D0D0D8;
+  }
+
+  &--nextGoal {
+    background-image: url('../../images/Rectangle_mini_active.png');
+
+    &::before,
+    &::after {
+      background-color: #FF8B37;
+    }
+  }
+}
