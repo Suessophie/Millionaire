@@ -1,25 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.scss';
 import { Switch, Route } from 'react-router-dom';
 import { StartPage } from './StartPage';
 import { Game } from './Game';
 import { GameOver } from './GameOver';
 
-export const App = () => (
-  <Switch>
-    <Route path="/" exact>
-      <StartPage />
-    </Route>
+export const App = () => {
+  const [benefit, setBenefit] = useState(0);
 
-    <Route
-      path="/game"
-      exact
-    >
-      <Game />
-    </Route>
+  const totalBenefit = (benefitAfterAnswer) => {
+    setBenefit(benefitAfterAnswer);
+  };
 
-    <Route path="/gameover">
-      <GameOver />
-    </Route>
-  </Switch>
-);
+  return (
+    <Switch>
+      <Route path="/" exact>
+        <StartPage />
+      </Route>
+
+      <Route
+        path="/game"
+        exact
+      >
+        <Game
+          totalBenefit={totalBenefit}
+        />
+      </Route>
+
+      <Route path="/gameover">
+        <GameOver
+          benefit={benefit}
+        />
+      </Route>
+    </Switch>
+  );
+};

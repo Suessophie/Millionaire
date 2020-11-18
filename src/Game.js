@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import questions from './api/questions.json';
 import benefits from './api/benefits.json';
@@ -22,29 +23,31 @@ const preparedBenefits = benefits.map((benefit) => {
   return { ...preparedBenefit };
 });
 
-export const Game = () => {
+export const Game = ({ totalBenefit }) => {
   const [count, setCount] = useState(0);
   const [benefitsList, setBenefitsList] = useState(preparedBenefits);
 
-  const changesOnClick = (correct, idOfQuestion) => {
-    if (correct) {
-      const changedBenefitsList = benefitsList.map((benefit) => {
-        if (benefit.id === idOfQuestion && correct === true) {
-          return {
-            ...benefit,
-            achieved: correct,
-          };
-        }
+  const clickOnCorrectAnswer = (idOfQuestion) => {
+    const changedBenefitsList = benefitsList.map((benefit) => {
+      if (benefit.id === idOfQuestion) {
+        return {
+          ...benefit,
+          achieved: true,
+        };
+      }
 
-        return { ...benefit };
-      });
+      return { ...benefit };
+    });
 
-      setBenefitsList(changedBenefitsList);
-      setCount(count + 1);
-    } else {
-      setBenefitsList(preparedBenefits);
-      setCount(0);
-    }
+    setBenefitsList(changedBenefitsList);
+    setCount(count + 1);
+  };
+
+  const clickOnIncorrectOrLastAnswer = (currentBenefit) => {
+    totalBenefit(currentBenefit);
+
+    setBenefitsList(preparedBenefits);
+    setCount(0);
   };
 
   return (
@@ -56,39 +59,49 @@ export const Game = () => {
         </h2>
         <div className="game__options">
           {questions[count].options.map(option => (
-            <div className="option">
-              <button
-                className="option__button"
-                key={option.id}
-                type="button"
-                onClick={() => changesOnClick(
-                  option.correct, questions[count].questionId,
-                )}
-              >
-                {option.correct ? (
-                  <Link
-                    className="option__link"
-                    to="/game"
-                  >
-                    <span className="option__letter">
-                      {letterOfAnswer[questions[count].options.indexOf(option)]}
-                    </span>
-                    <span className="option__text">
-                      {option.answer}
-                    </span>
-                  </Link>
-                ) : (
-                  <Link
-                    className="option__link"
-                    to="/gameover"
-                  >
-                    <span className="option__letter">
-                      {letterOfAnswer[questions[count].options.indexOf(option)]}
-                    </span>
+            <div
+              key={option.id}
+              className="option"
+            >
+              {option.correct && questions[count].questionId < 12 ? (
+                <Link
+                  className="option__link"
+                  to="/game"
+                  onClick={() => clickOnCorrectAnswer(
+                    questions[count].questionId,
+                  )}
+                >
+                  <span className="option__letter">
+                    {letterOfAnswer[questions[count].options.indexOf(option)]}
+                  </span>
+                  <span className="option__text">
                     {option.answer}
-                  </Link>
-                )}
-              </button>
+                  </span>
+                </Link>
+              ) : (
+                <Link
+                  className="option__link"
+                  to="/gameover"
+                  onClick={() => {
+                    if (count === questions.length - 1) {
+                      clickOnIncorrectOrLastAnswer(
+                        benefitsList[0].benefit,
+                      );
+                    } else {
+                      clickOnIncorrectOrLastAnswer(
+                        benefitsList[benefitsList.length - count].benefit,
+                      );
+                    }
+                  }}
+                >
+                  <span className="option__letter">
+                    {letterOfAnswer[questions[count].options.indexOf(option)]}
+                  </span>
+                  <span className="option__text">
+                    {option.answer}
+                  </span>
+                </Link>
+              )}
             </div>
           ))}
         </div>
@@ -108,3 +121,5 @@ export const Game = () => {
     </div>
   );
 };
+
+Game.propTypes = PropTypes.func.isRequired;

@@ -11,45 +11,39 @@ html {
   font-size: 20px;
   font-weight: 600;
   color: #1C1C21;
+  background-color: #E5E5E5;
 }
 
-.startPage {
+.start {
   height: 100vh;
   width: 100vw;
   background: linear-gradient(to right bottom, #FFF 50%, #FFF3EB 50%);
   
   &__container {
-    width: 77vw;
+    padding: calc(50vh - 178.5px) calc(50vw - 554px);
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
-    padding-top: 15vh;
   }
 
   &__content {
-    width: 37.4vw;
+    width: 538px;
+    padding: 49px 0;
   }
 
   &__title {
     font-size: 56px;
     line-height: 65px;
-    margin: 25px 0 64px;
+    margin-bottom: 64px;
   }
-}
 
-.button {
-  height: 64px;
-  width: 296px;
-  border-radius: 12px;
-  border: none;
-  background-color: #FF8B37;
-}
-
-.link {
-  font-size: 20px;
-  font-family: "Inter", sans-serif;
-  color: white;
-  text-decoration: none;
+  &__link {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    padding: 22px 123.7px;
+    border-radius: 12px;
+    background-color: #FF8B37;
+  }
 }
 
 .game {
@@ -63,32 +57,41 @@ html {
 
   &__title {
     font-size: 32px;
-    width: 43.3vw;
-    padding: 15vh 0 28vh 5.6vw;
+    line-height: 37px;
+    width: 624px;
+    height: 74px;
+    padding: 133px 0 calc(100vh - 455px) 80px;
   }
 
   &__options {
     width: 810px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 calc(50% - 405px);
   }
 
   &__rightBlock {
     width: 376px;
     background-color: #FFF;
+    padding: calc(50vh - 282px) 0;
   }
 }
 
 .option {
-  &__button {
+  &__link {
     background-image: url('./images/Rectangle.png');
-    border: none;
+    background-repeat: no-repeat;
+    display: block;
     width: 389px;
     height: 72px;
-    text-align: left;
+    line-height: 72px;
+    padding-left: 32px;
+    font-size: 20px;
+    color:  #1C1C21;
+    text-decoration: none;
     position: relative;
+    margin-bottom: 32px;
 
     &::before {
       content: '';
@@ -113,14 +116,6 @@ html {
     }
   }
 
-  &__link {
-    font-size: 20px;
-    font-family: "Inter", sans-serif;
-    color:  #1C1C21;
-    text-decoration: none;
-    margin-left: 32px;
-  }
-
   &__letter {
     font-weight: 600;
     color: #FF8B37;
@@ -138,10 +133,14 @@ html {
   background-repeat: no-repeat;
   width: 240px;
   height: 40px;
-  margin: 8px auto;
+  margin: 0 auto 8px auto;
   text-align: center;
   line-height: 40px;
   position: relative;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   &::before {
     content: '';
@@ -176,5 +175,43 @@ html {
     &::after {
       background-color: #FF8B37;
     }
+  }
+}
+
+.gameover {
+  height: 100vh;
+  width: 100vw;
+
+  &__container {
+    padding: calc(50vh - 178.5px) calc(50vw - 554px);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__content {
+    width: 538px;
+    padding: 59px 0;
+  }
+
+  &__subtitle {
+    font-size: 32px;
+    line-height: 37px;
+    opacity: 0.5;
+    margin-bottom: 8px;
+  }
+
+  &__title {
+    font-size: 56px;
+    line-height: 65px;
+    margin-bottom: 64px;
+  }
+
+  &__link {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    padding: 22px 123.7px;
+    border-radius: 12px;
+    background-color: #FF8B37;
   }
 }
