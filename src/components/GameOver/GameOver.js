@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import finishingImage from '../../images/Group_265.png';
+// import finishingImage from '../../images/Group_265.png';
 import './GameOver.scss';
 
 export const GameOver = ({ benefit }) => (
   <div className="gameover">
     <div className="gameover__container">
       <img
-        src={finishingImage}
+        src=""
         alt="sign class in stars"
       />
       <div className="gameover__content">

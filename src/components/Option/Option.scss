@@ -12,6 +12,11 @@
     text-decoration: none;
     position: relative;
     margin-bottom: 32px;
+    transition: .3s;
+
+    &:hover {
+      text-shadow: 0 0 5px rgba(122,122,122,0.5);
+    }
 
     &::before {
       content: '';
