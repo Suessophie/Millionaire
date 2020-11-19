@@ -14,10 +14,6 @@ export const App = () => {
 
   return (
     <Switch>
-      <Route path="/" exact>
-        <StartPage />
-      </Route>
-
       <Route
         path="/game/:questionId"
       >
@@ -30,6 +26,10 @@ export const App = () => {
         <GameOver
           benefit={benefit}
         />
+      </Route>
+
+      <Route path="/" exact>
+        <StartPage />
       </Route>
     </Switch>
   );
