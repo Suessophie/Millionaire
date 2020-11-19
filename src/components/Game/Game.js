@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import cn from 'classnames';
 
 import benefits from '../../api/benefits.json';
 import questions from '../../api/questions.json';
@@ -56,12 +57,13 @@ export const Game = ({ totalBenefit }) => {
   return (
     <div className="game">
       <button
-        className="game__burger"
+        className={cn('game__burger', {
+          'game__burger--open': isShowed,
+          'game__burger--close': !isShowed,
+        })}
         type="button"
         onClick={shownBenefits}
-      >
-        burger
-      </button>
+      />
 
       {isShowed && (
         <div className="game__leftBlock">

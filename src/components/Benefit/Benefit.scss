@@ -48,3 +48,22 @@
     }
   }
 }
+
+@media screen and (max-width: 1250px) {
+  .benefit {
+    background-image: url('../../images/Benefit/Rectangle__Benefit__mobile.png');
+    margin-bottom: 4px;
+    font-size: 14px;
+    height: 32px;
+    line-height: 32px;
+  
+    &--nextGoal {
+      background-image: url('../../images/Benefit/Rectangle__Benefit__mobile__active.png');
+    }
+
+    &::before,
+    &::after {
+      top: 15.5px;
+    }
+  }
+}
