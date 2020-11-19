@@ -1,6 +1,6 @@
 # Who wants to be a millionaire
 
- - DEMO LINK you can see [here](https://<your_account>.github.io/millionaire/)
+ - DEMO LINK you can see [here](https://suessophie.github.io/millionaire/)
  - Design of project you can see [here](https://www.figma.com/file/tIZEZn2HTAeSDQRzoOzvXE/Front-end-test%2C-Headway?node-id=0%3A1)
 
 Instruction on installation and launch
