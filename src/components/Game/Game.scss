@@ -103,3 +103,37 @@
     }
   }
 }
+
+@media screen and (max-width: 850px) {
+  .game {
+    &__rightBlock {
+      padding: calc(50vh - 186px) 0;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .game {
+    &__leftBlock {
+      padding: calc(50vh - 160px) 0;
+    }
+
+    &__title {
+      width: 450px;
+    }
+
+    &__options {
+      flex-direction: column;
+      width: 288px;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .game {
+    &__title {
+      width: 300px;
+    }
+  }
+}

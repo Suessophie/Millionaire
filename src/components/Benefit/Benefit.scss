@@ -67,3 +67,23 @@
     }
   }
 }
+
+@media screen and (max-width: 850px) {
+  .benefit {
+    margin-bottom: -1px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .benefit {
+    &::before {
+      width: 16px;
+      left: -16px;
+    }
+
+    &::after {
+      width: 16px;
+      right: -16px;
+    }
+  }
+}

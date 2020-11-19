@@ -73,3 +73,27 @@
     }
   }
 }
+
+@media screen and (max-width: 650px) {
+  .option {
+    &__link {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .option {
+    &__link {
+      &::before {
+        width: 14px;
+        left: -14px;
+      }
+
+      &::after {
+        width: 14px;
+        right: -14px;
+      }
+    }
+  }
+}
