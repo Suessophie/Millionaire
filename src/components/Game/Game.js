@@ -22,6 +22,11 @@ export const Game = ({ totalBenefit }) => {
   const [count, setCount] = useState(0);
   const [numberOfQuestion, setNumberOfQuestion] = useState(1);
   const [benefitsList, setBenefitsList] = useState(preparedBenefits);
+  const [isShowed, setIsShowed] = useState(true);
+
+  const shownBenefits = () => {
+    setIsShowed(!isShowed);
+  };
 
   const clickOnCorrectAnswer = (numberOfCurrentQuestion) => {
     const changedBenefitsList = benefitsList.map((benefit) => {
@@ -50,25 +55,34 @@ export const Game = ({ totalBenefit }) => {
 
   return (
     <div className="game">
+      <button
+        className="game__burger"
+        type="button"
+        onClick={shownBenefits}
+      >
+        burger
+      </button>
 
-      <div className="game__leftBlock">
-        <h2 className="game__title">
-          {questions[count].title}
-        </h2>
-        <div className="game__options">
-          {questions[count].options.map(option => (
-            <Option
-              key={option.id}
-              clickOnCorrectAnswer={clickOnCorrectAnswer}
-              clickOnIncorrectOrLastAnswer={clickOnIncorrectOrLastAnswer}
-              count={count}
-              numberOfQuestion={numberOfQuestion}
-              option={option}
-              benefitsList={benefitsList}
-            />
-          ))}
+      {isShowed && (
+        <div className="game__leftBlock">
+          <h2 className="game__title">
+            {questions[count].title}
+          </h2>
+          <div className="game__options">
+            {questions[count].options.map(option => (
+              <Option
+                key={option.id}
+                clickOnCorrectAnswer={clickOnCorrectAnswer}
+                clickOnIncorrectOrLastAnswer={clickOnIncorrectOrLastAnswer}
+                count={count}
+                numberOfQuestion={numberOfQuestion}
+                option={option}
+                benefitsList={benefitsList}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
       <div className="game__rightBlock">
         {benefitsList.map(benefit => (
