@@ -1,6 +1,6 @@
 .option {
   &__link {
-    background-image: url('../../images/Rectangle.png');
+    background-image: url('../../images/Option/Rectangle.png');
     background-repeat: no-repeat;
     display: block;
     width: 373px;
@@ -15,7 +15,12 @@
     transition: .3s;
 
     &:hover {
-      background-image: url('../../images/Rectangle__hover.png');
+      background-image: url('../../images/Option/Rectangle__hover.png');
+
+      &::before,
+      &::after {
+        background-color: #FF8B37;
+      }
     }
 
     &::before {
@@ -64,6 +69,11 @@
 
       &:hover {
         background-image: url('../../images/Option/Rectangle__Option__Mobile.png');
+
+        &::before,
+        &::after {
+          background-color: #FFF;
+        }
       }
 
       &::before,

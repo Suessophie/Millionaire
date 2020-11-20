@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import mainImageDesktop from '../../images/main_image_desktop.png';
-import mainImageMobile from '../../images/main_image_mobile.png';
+import mainImageDesktop from '../../images/Main/main_image_desktop.png';
+import mainImageMobile from '../../images/Main/main_image_mobile.png';
 
 import './StartPage.scss';
 

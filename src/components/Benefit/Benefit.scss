@@ -1,6 +1,6 @@
 .benefit {
   font-weight: 400;
-  background-image: url('../../images/Rectangle_mini.png');
+  background-image: url('../../images/Benefit/Rectangle_mini.png');
   background-repeat: no-repeat;
   width: 240px;
   height: 40px;
@@ -40,7 +40,7 @@
   }
 
   &--nextGoal {
-    background-image: url('../../images/Rectangle_mini_active.png');
+    background-image: url('../../images/Benefit/Rectangle_mini_active.png');
 
     &::before,
     &::after {

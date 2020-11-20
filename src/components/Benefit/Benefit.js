@@ -1,8 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import cn from 'classnames';
 
 import './Benefit.scss';
+import { BenefitShape } from '../../shapes/BenefitShape';
 
 export const Benefit = ({
   benefit,
@@ -20,9 +20,4 @@ export const Benefit = ({
   </div>
 );
 
-Benefit.propTypes = {
-  benefit: PropTypes.string.isRequired,
-  achieved: PropTypes.bool.isRequired,
-  idOfBenefit: PropTypes.number.isRequired,
-  numberOfQuestion: PropTypes.number.isRequired,
-};
+Benefit.propTypes = BenefitShape;

@@ -1,5 +1,6 @@
 {
   "name": "react-app",
+  "homepage": "https://suessophie.github.io/Millionaire",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
