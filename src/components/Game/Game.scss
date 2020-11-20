@@ -1,0 +1,139 @@
+.game {
+  display: flex;
+  height: 100vh;
+
+  &__leftBlock {
+    width: calc(100% - 376px);
+    background-color: #EFEFEF;
+  }
+
+  &__burger {
+    display: none;
+  }
+
+  &__title {
+    font-size: 32px;
+    line-height: 37px;
+    width: 624px;
+    height: 74px;
+    padding: 133px 0 calc(100vh - 455px) 80px;
+  }
+
+  &__options {
+    width: 780px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 calc(50% - 390px);
+  }
+
+  &__rightBlock {
+    width: 376px;
+    background-color: #FFF;
+    padding: calc(50vh - 282px) 0;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .game {
+    position: relative;
+
+    &__burger {
+      display: block;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 3;
+      border: none;
+      cursor: pointer;
+
+      &--open {
+        background-image: url('../../images/BurgerMenu/openBurgerMenu.png');
+        width: 16px;
+        height: 14px;
+      }
+
+      &--close {
+        background-image: url('../../images/BurgerMenu/closeBurgerMenu.png');
+        width: 13.31px;
+        height: 13.31px;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &__leftBlock {
+      width: 100vw;
+      height: 100vh;
+      z-index: 2;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      padding: calc(50vh - 105px) 0;
+    }
+
+    &__title {
+      width: 624px;
+      height: 42px;
+      line-height: 21px;
+      font-size: 18px;
+      margin: 0 auto 21px;
+      padding: 0;
+      text-align: center;
+    }
+
+    &__options {
+      width: 610px;
+      margin: 0 auto;
+    }
+
+    &__rightBlock {
+      background-color: #F5F5F7;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1;
+      padding: calc(50vh - 214px) 0;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .game {
+    &__rightBlock {
+      padding: calc(50vh - 186px) 0;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .game {
+    &__leftBlock {
+      padding: calc(50vh - 160px) 0;
+    }
+
+    &__title {
+      width: 450px;
+    }
+
+    &__options {
+      flex-direction: column;
+      width: 288px;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .game {
+    &__title {
+      width: 300px;
+    }
+  }
+}
