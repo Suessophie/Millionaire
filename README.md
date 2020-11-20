@@ -3,8 +3,7 @@
  - DEMO LINK you can see [here](https://suessophie.github.io/Millionaire/)
  - Design of project you can see [here](https://www.figma.com/file/tIZEZn2HTAeSDQRzoOzvXE/Front-end-test%2C-Headway?node-id=0%3A1)
 
-Instruction on installation and launch
-
+Instruction of installation and launch
  - Fork the repository
  - Clone the forked repo
  - Run npm install to install the dependencies
